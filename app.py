@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index(): 
 
 #The index function calculates the CPU utilization percentage and the memory usage percentage
-    cpu_percent = psutil.cpu_percent()
+    cpu_percent = psutil.cpu_percent(interval=1)
     mem_percent = psutil.virtual_memory().percent
     Message = None
     if cpu_percent > 75 or mem_percent > 75:

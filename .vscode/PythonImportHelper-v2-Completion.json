@@ -29,7 +29,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def index(): \n#The index function calculates the CPU utilization percentage and the memory usage percentage\n    cpu_percent = psutil.cpu_percent()\n    mem_percent = psutil.virtual_memory().percent\n    Message = None\n    if cpu_percent > 75 or mem_percent > 75:\n        Message = \"High CPU or High Memory Utilisation detected. Please scale up!\"\n    return render_template(\"index.html\", cpu_percent=cpu_percent, mem_percent=mem_percent, message=Message)\n#this used to execute code only if the file was run directly as a script, and not imported\nif __name__ == '__main__':",
+        "peekOfCode": "def index(): \n#The index function calculates the CPU utilization percentage and the memory usage percentage\n    cpu_percent = psutil.cpu_percent(interval=1)\n    mem_percent = psutil.virtual_memory().percent\n    Message = None\n    if cpu_percent > 75 or mem_percent > 75:\n        Message = \"High CPU or High Memory Utilisation detected. Please scale up!\"\n    return render_template(\"index.html\", cpu_percent=cpu_percent, mem_percent=mem_percent, message=Message)\n#this used to execute code only if the file was run directly as a script, and not imported\nif __name__ == '__main__':",
         "detail": "app",
         "documentation": {}
     },
@@ -38,7 +38,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index(): \n#The index function calculates the CPU utilization percentage and the memory usage percentage\n    cpu_percent = psutil.cpu_percent()\n    mem_percent = psutil.virtual_memory().percent\n    Message = None\n    if cpu_percent > 75 or mem_percent > 75:\n        Message = \"High CPU or High Memory Utilisation detected. Please scale up!\"\n    return render_template(\"index.html\", cpu_percent=cpu_percent, mem_percent=mem_percent, message=Message)",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index(): \n#The index function calculates the CPU utilization percentage and the memory usage percentage\n    cpu_percent = psutil.cpu_percent(interval=1)\n    mem_percent = psutil.virtual_memory().percent\n    Message = None\n    if cpu_percent > 75 or mem_percent > 75:\n        Message = \"High CPU or High Memory Utilisation detected. Please scale up!\"\n    return render_template(\"index.html\", cpu_percent=cpu_percent, mem_percent=mem_percent, message=Message)",
         "detail": "app",
         "documentation": {}
     }
