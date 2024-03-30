@@ -3,7 +3,7 @@ from flask import Flask, render_template
 
 #The Flask module is used to create a web application. The app object represents the Flask application
 #The __name__ argument is passed to the Flask constructor, which helps Flask determine the root path for the application
-app = Flask(__name__)
+app = Flask(__name__) 
 
 @app.route("/")
 def index():
